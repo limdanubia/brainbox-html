@@ -1,0 +1,26 @@
+/* #Media Queries
+================================================== */
+$neat-grid: (
+	columns: 12,
+	gutter: 0,
+	media: 1280px,
+	direction: ltr,
+);
+
+$BREAKPOINTS: (
+	tm_1370: max-width 1370px,
+	tm_1320: max-width 1320px,
+	tm_1200: max-width 1200px,
+	tm_996: max-width 996px,
+	tm_840: max-width 840px,
+	tm_768: max-width 768px,
+	tm_640: max-width 640px,
+	tm_480: max-width 480px,
+	tm_320: max-width 322px,
+);
+
+.container {
+	@extend %clearfix;
+	@include container(1280px);
+	padding: 0 15px; 
+}

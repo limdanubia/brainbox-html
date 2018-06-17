@@ -1,0 +1,10 @@
+footer {
+	&#mainFooter {
+		background-color: #735cb7;
+		padding: 30px 0;
+		text-align: center;
+		color: #fff;
+		@extend .primary-font;
+		font-style: italic;
+	}//footer principal
+}//footer

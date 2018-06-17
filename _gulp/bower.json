@@ -1,0 +1,27 @@
+{
+  "name": "brainbox",
+  "version": "1.0.0",
+  "authors": [
+    "Mia <h.milena@gmail.com>",
+    "Cinthia",
+    "Manu",
+    "Bruno",
+    "Danúbia"
+  ],
+  "description": "BrainBox 1.0, by Angular Academy Avanade Team",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "breakpoint-sass": "^2.6.1",
+    "animate.css": "^3.4.0",
+    "magnific-popup": "^1.0.0",
+    "font-awesome": "fontawesome#^5.0.13"
+  }
+}

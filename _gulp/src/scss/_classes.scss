@@ -1,0 +1,200 @@
+.center {
+	text-align: center;
+}
+
+.img-center {
+	display: block;
+	margin: 0 auto;
+}
+
+.hide-text {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+.transition
+{
+	transition: all .3s;
+}
+
+.align {
+	&.right {
+		text-align: right;
+	}
+}
+
+.float {
+	&.left{
+		float: left;
+	}
+	&.right{
+		float: right;
+	}
+}
+
+img {
+	&.left{
+		float: left;
+		margin: 0 10px 10px 0;
+	}
+	&.right{
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+}//img
+
+.none {
+	display: none;
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+//Grid Style
+.grid {
+	@extend %clearfix;
+
+	.tm_1 {
+		@include grid-column(1);
+	}
+	.tm_2 {
+		@include grid-column(2);
+	}
+	.tm_3 {
+		@include grid-column(3);
+	}
+	.tm_35 {
+		@include grid-column(3.5);
+	}
+	.tm_4 {
+		@include grid-column(4);
+	}
+	.tm_45 {
+		@include grid-column(4.5);
+	}
+	.tm_5 {
+		@include grid-column(5);
+	}
+	.tm_55 {
+		@include grid-column(5.5);
+	}
+	.tm_6 {
+		@include grid-column(6);
+	}
+	.tm_7 {
+		@include grid-column(7);
+	}
+	.tm_8 {
+		@include grid-column(8);
+	}
+	.tm_9 {
+		@include grid-column(9);
+	}
+	.tm_10 {
+		@include grid-column(10);
+	}
+	.tm_11 {
+		@include grid-column(11);
+	}
+	.tm_12 {
+		@include grid-column(12);
+	}
+
+	.tm_1,
+	.tm_2,
+	.tm_3,
+	.tm_35,
+	.tm_4,
+	.tm_45,
+	.tm_5,
+	.tm_55,
+	.tm_6,
+	.tm_7,
+	.tm_8,
+	.tm_9,
+	.tm_10,
+	.tm_11,
+	.tm_12 {
+		padding: 0 7px;
+		margin-bottom: 15px;
+
+		@include respond-to('tm_768'){
+			@include grid-column(12);
+		}//tm_768
+	}
+}//grid
+
+// Lightbox animation
+/* overlay at start */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+	transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: .8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+	/* ideally, transition speed should match zoom duration */
+	transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+	opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+	opacity: .8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+// .gradient {
+// 	background: #ff9359;
+// 	background: -moz-linear-gradient(top, #ff9359 0%, #ff783c 50%, #ff591a 100%);
+// 	background: -webkit-linear-gradient(top, #ff9359 0%,#ff783c 50%,#ff591a 100%);
+// 	background: linear-gradient(to bottom, #ff9359 0%,#ff783c 50%,#ff591a 100%);
+// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9359', endColorstr='#ff591a',GradientType=0 );
+// }
+
+.lightbox{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, .7);
+	position: fixed;
+	opacity: 1;
+	@extend .transition;
+	
+	&.hidden {
+		pointer-events: none ;
+		opacity: 0;
+	}
+
+}//lightboxlightbox

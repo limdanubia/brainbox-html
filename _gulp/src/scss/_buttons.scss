@@ -1,0 +1,49 @@
+a, span, button[type=submit], input[type=submit] {
+	&.bt-default {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 20px;
+		line-height: 20px;
+		text-decoration: none;
+		border-radius: 50px;
+		border: none;
+		@extend .transition;
+
+		@include respond-to('tm_1370'){
+			font-size: 17px;
+			line-height: 17px;
+		}
+	}
+
+	&.big {
+		padding: 20px 60px 25px;
+		@include respond-to('tm_1370'){
+			padding: 20px 45px 25px;
+		}
+	}
+
+	&.smaller {
+		padding: 20px 40px 25px;
+		font-size: 15px;
+	}
+
+	// &.primary-button {
+	// 	background-color: $primary-color;
+	// 	color: $white;
+	// 	&:hover {
+	// 		background-color: $secondary-color;
+	// 		color: $black;
+	// 	}
+	// }
+
+	// &.secondary-button {
+	// 	background-color: $secondary-color;
+	// 	color: $black;
+	// 	&:hover {
+	// 		background-color: $primary-color;
+	// 		color: $white;
+	// 	}
+	// }
+
+
+}//botão padrão

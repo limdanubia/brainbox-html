@@ -1,0 +1,23 @@
+.cards {
+	padding: 60px 0;
+	@extend .transition;
+
+	.container {
+		@extend .transition;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&.blocked {
+		.container {
+			@include container(684px);
+			flex-direction: column;
+		}
+	}
+
+	svg {
+		display: none;
+	}
+
+}//cards

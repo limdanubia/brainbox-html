@@ -1,0 +1,95 @@
+%clearfix {
+	&:before {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+html, body {
+	@extend %clearfix;
+	height: 100%;
+	margin:0;
+	padding:0;
+	background-color: #f6f7f9;
+	@extend .primary-font;
+}
+
+html{
+	height: 100%;
+	@include box-sizing(border-box);
+}
+
+body {
+	position: relative;
+	margin: 0;
+	min-height: 100%;
+	&::selection {
+		background: #1061e0;
+		color: $white;
+	}
+}
+
+input[type=search] {
+	@include box-sizing(border-box);
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+//main
+main {
+	@extend %clearfix;
+	img {
+		max-width: 100%;
+	}
+}//main
+
+h1,h2,h3,h4,h5,h6,
+p,a,span,img,time,address,small,ul,li, strong, label,
+button, input, select,i, div, article,br, sup
+{
+	&::selection {
+		background: #6d56ae;
+		color: $white;
+	}
+}
+
+//box sizing
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}
+
+a,
+input,
+button,
+textarea
+{
+	&:focus {
+		outline: none;
+	}
+}//a
+
+a {
+	color: $link;
+	@extend .transition;
+	&:hover {
+		color: darken($link, 10%);
+	}
+}
+
+p,
+ul li,
+address,
+dl dd
+{
+	font-size: 18px;
+	line-height: 1.2;
+}

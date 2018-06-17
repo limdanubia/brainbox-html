@@ -1,0 +1,124 @@
+.card {
+	width: 239px;
+	height: 245px;
+	background-color: $lYellow;
+	position: relative;
+	margin: 2%;
+	display: flex;
+	align-items: center;
+	@extend .transition;
+	// flex-grow: 1;
+	// width: calc(100% * (1/5) - 10px - 1px);
+
+	&.mouseenter {
+		animation: blob-in cubic-bezier(0.770, 0.000, 0.175, 1.000) .30s forwards;
+	}
+
+	&.mouseleave {
+		animation: blob-out cubic-bezier(0.770, 0.000, 0.175, 1.000) .30s forwards;
+	}
+
+	&.focused {
+
+	}
+
+	&.hide-card {
+		opacity: 0;
+		transition: 0.5s;
+	}
+
+	$dist-x:65px;
+	$dist-y:65px;
+	@keyframes blob-in {
+		0%{
+			transform:scale(1);
+		}
+		100%{
+			transform:scale(1.05);
+		}
+	}
+	@keyframes blob-out {
+		0%{
+			transform:scale(1.05);
+		}
+		100%{
+			transform:scale(1);
+		}
+	}
+
+	&:before {
+		display: block;
+		content: '';
+		width: 32px;
+		height: 37px;
+		position: absolute;
+		top: -15px;
+		left: 15px;
+		background: url(../img/card/icon-paperclip.png) no-repeat top center;
+	}
+
+	&:hover{
+		.main-actions,
+		.bottom-actions
+		{
+			opacity: 1;
+			pointer-events: inherit;
+		}
+	}
+
+	.main-actions,
+	.bottom-actions
+	{
+		position: absolute;
+		width: 100%;
+		opacity: 0;
+		pointer-events: none;
+		@extend .transition;
+		> div {
+			display: inline-block;
+			> button {
+				margin-right: 10px;
+				width: 31px;
+				height: 31px;
+				border: none;
+				border-radius: 50%;
+				background-color: $dark-grey;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	.main-actions {
+		top: -15px;
+		right: -15px;
+		text-align: right;
+	}//main-actions
+
+	.edit-box {
+		height: 200px;
+		overflow: hidden;
+		cursor: pointer;
+		p {
+			padding: 0 20px;
+			color: #3b3b3b;
+			font-size: 18px;
+			&:focus {
+				outline: 1px dashed #6e6e6e;
+			}
+		}
+	}//edit-box
+
+	.bottom-actions {
+		bottom: -15px;
+		text-align: right;
+	}//bottom-actions
+}//card
+
+.cards.blocked {
+	.card {
+		width: 100%;
+		margin: 2% 0 5% ;
+	}
+}//cards

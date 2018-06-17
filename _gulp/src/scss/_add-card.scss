@@ -1,0 +1,126 @@
+.add-card {
+	padding: 40px 0;
+	background-color: #e7deff;
+	border-bottom: 1px solid #dacff8;
+	@extend .transition;
+
+	&.no-typing {
+		.writing-area {
+			.title,
+			.tags,
+			.actions
+			{
+				display: none
+			}
+
+			.the-box {
+				pointer-events: none;
+			}
+
+		}
+	}
+
+	.container {
+		@include container(684px);
+	}
+
+	.writing-area {
+		@extend .transition;
+		.title,
+		.the-box,
+		.tags,
+		.actions
+		{
+			@extend .transition;
+		}
+	}
+
+	.writing-area {
+		background-color: #fff;
+		min-height: 125px;
+		padding: 15px 20px;
+		cursor: text;
+		z-index: 3;
+		position: relative;
+
+		[contenteditable=true]:empty:before{
+			content: attr(placeholder);
+			display: block; /* For Firefox */
+		}
+
+		.title,
+		.the-box,
+		.tags
+		{
+			outline: none;
+			cursor: pointer;
+		}
+
+		.title {
+			color: #585858;
+			font-weight: 600;
+			padding: 10px 0;
+			font-size: 18px;
+		}
+
+		.the-box {
+			font-style: italic;
+			color: #585858;
+			padding: 10px 0;
+			margin-bottom: 10px;
+		}//the-box
+
+		.tags {
+			color: #585858;
+			padding: 10px 0;
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+
+		.actions {
+			@extend %clearfix;
+			display: flex;
+			align-items: center;
+
+			.buttons > button,
+			.end-action > button
+			{
+				background-color: $dark-grey;
+				border: none;
+				@extend .transition;
+				&:hover {
+					background-color: $primary-color;
+				}
+			}
+
+			.buttons {
+				@include grid-column(8);
+				> button {
+					width: 36px;
+					height: 36px;
+					border-radius: 50%;
+					margin-right: 10px;
+					&:last-child{
+						margin-right: 0;
+					}
+				}
+			}//buttons
+
+			.end-action {
+				@include grid-column(4);
+				> button {
+					float: right;
+					border-radius: 20px;
+					padding: 5px 15px;
+					color: #fff;
+					text-transform: uppercase;
+					font-weight: 600;
+					font-size: 14px;
+				}
+			}//end-action
+
+		}//actions
+
+	}//.writing-area
+
+}//add-card

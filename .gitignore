@@ -1,0 +1,3 @@
+# Ignore everything
+_gulp/bower_components/
+_gulp/node_modules/
